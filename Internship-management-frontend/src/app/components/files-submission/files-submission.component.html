@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Add any additional stylesheets or meta tags here -->
+    <title>ENSIAS InternHub</title>
+</head>
+<body>
+
+<nav>
+    <!-- Your navigation bar component -->
+    <app-nav-bar></app-nav-bar>
+</nav>
+
+<div class="main" style="width: 100%; height: 100%; background: linear-gradient(to bottom, black, #411010); display: flex; position: relative;">
+
+    <div style="width: 50%; margin: auto;">
+        <form>
+            <h2 style="color: white; text-align: center; margin-bottom: 20px;">Document Upload</h2>
+
+            <!-- Add form fields as needed -->
+            <div class="form-group">
+                <label for="documentType" style="color: white;">Document Type:</label>
+                <select class="form-control" id="documentType" name="documentType">
+                    <option value="resume">Resume</option>
+                    <option value="coverLetter">Cover Letter</option>
+                    <!-- Add more document types as needed -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="documentFile" style="color: white;">Choose File:</label>
+                <input type="file" class="form-control-file" id="documentFile" name="documentFile">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+    </div>
+
+</div>
+
+<app-footer></app-footer>
+
+</body>
+</html>

@@ -13,18 +13,25 @@ public class Professeur {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String Id;
-    @Column(nullable = false)
-    private String Nom;
-    @Column(nullable = false)
-    private String Prenom;
-    @Column(nullable = false)
-    private String Adresse;
-    @Column(nullable = false)
-    private Date Date_embauche;
-    @Column(nullable = false)
-    private Date Date_depart;
+    private String id;
 
-    @OneToOne(mappedBy = "promo")
+    @Column(nullable = false)
+    private String nom;
+
+    @Column(nullable = false)
+    private String prenom;
+
+    @Column(nullable = false)
+    private String adresse;
+
+    @Column(nullable = false,unique = true)
+    private String email;
+
+    @Column(nullable = false)
+    private Date dateEmbauche;
+
+    private Date dateDepart;
+
+    @OneToOne(mappedBy = "professeur") // Use the field name in the Promo entity
     private Promo promo;
 }

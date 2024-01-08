@@ -13,25 +13,30 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Examine implements Serializable {
+
     @EmbeddedId
     private ExamineId id;
+
     @Column(nullable = false)
-    private Date Date_examen;
+    private Date dateExamen;
 
     @ManyToOne
-    @MapsId("Id")  // This maps to the field name in the ExigeId class
-    @JoinColumn(name = "id_commission")
+    @MapsId("commissionId")  // This maps to the field name in the ExigeId class
+    @JoinColumn(name = "idCommission")
     private Commission commission;
 
     @ManyToOne
-    @MapsId("id_candidat")  // This maps to the field name in the ExigeId class
-    @JoinColumn(name = "num_candidat")
+    @MapsId("candidatId")  // This maps to the field name in the ExigeId class
+    @JoinColumn(name = "numCandidat")
     private Candidat candidat;
 
     @Embeddable
     @Data @NoArgsConstructor @AllArgsConstructor
     public static class ExamineId implements Serializable {
-        private String Num_candidat;
-        private String Id_commission;
+        @Column(name = "numCandidat")
+        private Long candidatId;
+
+        @Column(name = "idCommission")
+        private Long commissionId;
     }
 }
